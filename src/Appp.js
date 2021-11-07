@@ -3,12 +3,14 @@ import { useState } from "react";
 import Content from "./Content";
 import { useLayoutEffect } from "react";
 import UseLayoutEffects from "./useLayoutEffect";
+import UseReduct from "./useReduct";
 
 function Appp() {
     const storageJobs =JSON.parse( localStorage.getItem('jobs'))
     // console.log(storageJobs);
     const [show, setShow] = useState(false)
     const [shows, setShows] = useState(false)
+    const [showss, setShowss] = useState(false)
  const [job, setJob] = useState('')
  const [jobs, setJobs] = useState(storageJobs ?? []) // trais == undef,null lay dang sau
 //  const [jobs, setJobs] = useState(()=>{
@@ -48,6 +50,9 @@ function Appp() {
 
     <button style={{marginLeft:50}} onClick={()=>setShows(!shows)}>Show LayoutEffect</button>
     {shows && <UseLayoutEffects />}
+
+    <button style={{marginLeft:50}} onClick={()=>setShowss(!showss)}>Show useReduct</button>
+    {showss && <UseReduct />}
     
     </div>
   );
